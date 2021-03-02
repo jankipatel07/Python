@@ -1,11 +1,12 @@
 import requests
 import json
-
+import getpass
 #https://api.github.com/repos/{owner}/{repo}
 
 def createNewRepo():
+    tokeninput = getpass.getpass('Enter token: ')
     url = 'https://api.github.com/user/repos'
-    git_token = 'token TOKEN'
+    git_token = 'token ' + tokeninput
     myobj = {'name': 'pythonAutomatedRepo', 'description': 'Created with Github API', 'auto_init': 'true'}
     header = {'Authorization': git_token}
 
